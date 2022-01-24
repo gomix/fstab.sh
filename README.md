@@ -1,6 +1,6 @@
 # fstab.sh
 
-# Overview
+## Overview
 
 Simple Bash based */etc/fstab* generator from yaml formated file.
 
