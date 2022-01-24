@@ -1,6 +1,10 @@
 #!/usr/bin/bash
 
-# Simple /etc/fstab file generator from yaml formated data (fstab.yml)
+# Simple /etc/fstab file generator from yaml formated data (fstab.yml).
+
+# Dependencies:
+# yq binary has to be present in your system under your PATH definition
+# https://github.com/mikefarah/yq
 
 fstab_entries=$(yq e '.fstab|keys' fstab.yml -o csv | sed 's/,/ /g' | sed 's/\n//g')
 
@@ -10,6 +14,7 @@ do
   yq_path=".fstab[\"$entry\"][\"type\"]"
   fs_vfstype=$(yq eval "$yq_path" fstab.yml)
 
+  # fs_spec field definition per fs type
   case $fs_vfstype in
   nfs)
     yq_path=".fstab[\"$entry\"][\"export\"]"
@@ -26,6 +31,7 @@ do
   yq_path=".fstab[\"$entry\"][\"mount\"]"
   fs_file=$(yq eval "$yq_path" fstab.yml)
 
+  # Mount options extraction
   yq_path=".fstab[\"$entry\"][\"options\"] // [\"defaults\"] "
   fs_mntops=$(yq eval "$yq_path" -o csv fstab.yml)
 
