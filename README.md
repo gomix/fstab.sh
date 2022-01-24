@@ -7,6 +7,7 @@ Simple Bash based */etc/fstab* generator from yaml formated file.
 ## Input file
 
 Place you data on the same directory in a file named **fstab.yaml**.
+
 Find below a sample input file.
 
 **fstab.yml** 
