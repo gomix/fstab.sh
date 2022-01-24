@@ -41,3 +41,9 @@ Using previous sample yaml definition:
     /dev/sda2 / ext4 defaults 0 0
     /deb/sdb1 /var/lib/postgresql ext4 defaults 0 0
     192.168.4.5:/var/nfs/home /home nfs noexec,nosuid 0 0
+
+## Dependencies
+
+**fstab.sh** requires **yq** installed in your Linux system.
+
+Assure it can be located using your PATH search paths.
