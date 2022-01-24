@@ -2,9 +2,9 @@
 
 Simple /etc/fstab generator from yaml formated file.
 
-Sample Input
+Sample Input file
 
-fstab.yml
+*fstab.yml* 
 
     ---
     fstab:
@@ -26,8 +26,12 @@ fstab.yml
 	  - noexec
 	  - nosuid
 
-%> ./fstab.sh                                                                                             
-/dev/sda1 /boot xfs defaults 0 0                                                                          
-/dev/sda2 / ext4 defaults 0 0                                                                             
-/deb/sdb1 /var/lib/postgresql ext4 defaults 0 0                                                           
-192.168.4.5:/var/nfs/home /home nfs noexec,nosuid 0 0
+Place you data on the same directory in a file named "fstab.yaml*.
+
+Sample Output
+
+    %> ./fstab.sh
+    /dev/sda1 /boot xfs defaults 0 0
+    /dev/sda2 / ext4 defaults 0 0
+    /deb/sdb1 /var/lib/postgresql ext4 defaults 0 0
+    192.168.4.5:/var/nfs/home /home nfs noexec,nosuid 0 0
