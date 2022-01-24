@@ -1,8 +1,13 @@
 # fstab.sh
 
-Simple /etc/fstab generator from yaml formated file.
+# Overview
 
-Sample Input file
+Simple Bash based /etc/fstab generator from yaml formated file.
+
+## Input file
+
+Place you data on the same directory in a file named *fstab.yaml*.
+Find below a sample input file.
 
 *fstab.yml* 
 
@@ -26,9 +31,9 @@ Sample Input file
 	  - noexec
 	  - nosuid
 
-Place you data on the same directory in a file named "fstab.yaml*.
+## Sample Output
 
-Sample Output
+Using previous sample yaml definition: 
 
     %> ./fstab.sh
     /dev/sda1 /boot xfs defaults 0 0
