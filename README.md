@@ -2,7 +2,7 @@
 
 # Overview
 
-Simple Bash based /etc/fstab generator from yaml formated file.
+Simple Bash based */etc/fstab* generator from yaml formated file.
 
 ## Input file
 
