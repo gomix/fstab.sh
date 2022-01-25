@@ -10,6 +10,8 @@ Place you data on the same directory in a file named **fstab.yaml**.
 
 Find below a sample input file.
 
+Actually the script support regular local partition filesystems and NFS. Use mount options as needed if there is none present, `defaults` will be used.
+
 **fstab.yml** 
 
     ---
@@ -23,7 +25,6 @@ Find below a sample input file.
       /deb/sdb1:
 	mount: /var/lib/postgresql
 	type: ext4
-	root-reserve: 10%
       192.168.4.5:
 	mount: /home
 	export: /var/nfs/home
